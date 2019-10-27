@@ -1,6 +1,6 @@
 # Terraform + Docker-Swarm setup
 
-Deploy a docker-swarm environment in a VPC using Terraform
+Deploy a Java app using docker-swarm orchestration in a VPC using Terraform
 
 Includes
 --------
@@ -32,15 +32,15 @@ The following steps will walk you through the process:
 
 1. Clone the repo::
 
-      git clone `https://github.com/sree-warrier/docker-swarm-tf.git`
+      git clone `https://github.com/sree-warrier/app-java-tf.git`
 
 2. Following should be created before terraform file execution::
 
     - Create a keypair or use an existing one
-    - Update key pair under respective file main.tf, swarm-join.sh, connect.sh by changing the value "key-pair.pem".
+    - Update key pair under respective file main.tf, swarm-join.sh, connect.sh by changing the value "ssh-key-pair.pem".
     - Make sure that the key file should be copied under the infra-tf directory, were the terraform execution is processed
     - Configure aws credentials, update the access and secret keys in variable.tf
-    - Updated your local public IP under the security group section in main.tf file 
+    - Updated your local public IP under the security group section in main.tf file
 
 3. infra-tf directory conatins the terraform file for infra setup, use the following steps::
 
@@ -53,7 +53,7 @@ The following steps will walk you through the process:
 
 4. Once the infra is up, follow these steps for a slave to join the swarm.
 
-    - Login to the Jump instance using the key 
+    - Login to the Jump instance using the key
     - Execute this command in Jump box
 
       ```bash connect.sh <swarm-master-ip/hostname> <swarm-slave-ip/hostname>```
@@ -76,3 +76,6 @@ The following steps will walk you through the process:
     - Post build configs are updated with the deployment commands which has to be executed in the swarm master box.
 
 ## Credits
+
+    - Creating a spring boot app and make it an 
+    - Reference https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started-first-application
