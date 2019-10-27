@@ -77,5 +77,5 @@ The following steps will walk you through the process:
 
 ## Credits
 
-    - Creating a spring boot app and make it an 
+    - Creating a spring boot app and make it as executable jar
     - Reference https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started-first-application
